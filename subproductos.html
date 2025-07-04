@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subproductos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Subproductos</h1>
+        <div class="navigation">
+            <button onclick="agregarSubproducto()">Agregar</button>
+            <button onclick="eliminarSubproducto()">Eliminar</button>
+            <button onclick="editarSubproducto()">Editar</button>
+            <input type="text" id="busqueda" placeholder="Buscar">
+        </div>
+        <table id="subproductos-grid">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subproducto in subproductos %}
+                <tr>
+                    <td>{{ subproducto.Nombre }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function agregarSubproducto() {
+            // Implementar lógica para agregar un subproducto
+        }
+
+        function eliminarSubproducto() {
+            // Implementar lógica para eliminar un subproducto seleccionado
+        }
+
+        function editarSubproducto() {
+            // Implementar lógica para editar un subproducto seleccionado
+        }
+
+        document.getElementById('busqueda').addEventListener('input', function() {
+            const busqueda = this.value.toLowerCase();
+            const filas = document.querySelectorAll('#subproductos-grid tbody tr');
+            filas.forEach(function(fila) {
+                const nombre = fila.querySelector('td').textContent.toLowerCase();
+                if (nombre.includes(busqueda)) {
+                    fila.style.display = '';
+                } else {
+                    fila.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
