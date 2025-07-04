@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Menú Principal</h1>
+        <div class="navigation">
+            <a href="/recetas" class="button">Gestión de Recetas</a>
+            <a href="/productos" class="button">Gestión de Productos</a>
+            <a href="/insumos" class="button">Gestión de Insumos</a>
+            <button class="theme-toggle gg-moon" onclick="toggleTheme()"></button>
+            🌙
+            </button>
+        </div>
+    </div>
+</body>
+</html>
